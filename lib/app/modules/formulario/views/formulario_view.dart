@@ -102,7 +102,7 @@ class FormularioView extends GetView<FormularioController> {
       floatingActionButton: ElevatedButton(
         onPressed: () {
           if (controller.formKey.currentState!.validate()) {
-            print("Ir AdamsPay");
+            controller.pagar();
           }
         },
         child: Text(

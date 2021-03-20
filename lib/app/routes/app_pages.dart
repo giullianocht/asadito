@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:asadito/app/modules/adamspay/bindings/adamspay_binding.dart';
+import 'package:asadito/app/modules/adamspay/views/adamspay_view.dart';
 import 'package:asadito/app/modules/carrito/bindings/carrito_binding.dart';
 import 'package:asadito/app/modules/carrito/views/carrito_view.dart';
 import 'package:asadito/app/modules/comida/bindings/comida_binding.dart';
@@ -41,6 +43,11 @@ class AppPages {
       name: _Paths.FORMULARIO,
       page: () => FormularioView(),
       binding: FormularioBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADAMSPAY,
+      page: () => AdamspayView(),
+      binding: AdamspayBinding(),
     ),
   ];
 }
