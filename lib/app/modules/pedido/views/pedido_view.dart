@@ -1,4 +1,5 @@
 import 'package:asadito/app/data/models/Comida.dart';
+import 'package:asadito/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -58,7 +59,9 @@ class PedidoView extends GetView<PedidoController> {
         child: Card(
           elevation: 5,
           child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(Routes.COMIDA, arguments: comida);
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,14 +77,14 @@ class PedidoView extends GetView<PedidoController> {
                             width: 7.0,
                           ),
                           Icon(
-                            Icons.no_meals,
+                            Icons.mood,
                             color: Colors.red,
                           ),
                           SizedBox(
                             width: 7.0,
                           ),
                           Text(
-                            comida.nombre,
+                            comida.nombre.capitalize!,
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 17.0,
