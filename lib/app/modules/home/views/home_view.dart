@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,16 +10,51 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('HomeView'),
-        centerTitle: true,
+        body: Center(
+      child: Column(
+        children: [
+          SizedBox(
+            height: Get.mediaQuery.size.height * 0.10,
+          ),
+          Container(
+            height: 150,
+            width: 150,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50.0),
+              child: Image.asset(
+                "assets/logo.jpg",
+              ),
+            ),
+          ),
+          SizedBox(
+            height: Get.mediaQuery.size.height * 0.15,
+          ),
+          Text(
+            "Mesa 7",
+            style: TextStyle(fontSize: 35, shadows: [
+              Shadow(
+                blurRadius: 1.0,
+                color: Colors.yellow,
+              ),
+            ]),
+          ),
+          SizedBox(
+            height: Get.mediaQuery.size.height * 0.30,
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text(
+              "Realizar Pedido",
+              style: TextStyle(fontSize: 20),
+            ),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(
+                Colors.red,
+              ),
+            ),
+          )
+        ],
       ),
-      body: Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    );
+    ));
   }
 }
