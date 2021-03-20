@@ -1,13 +1,13 @@
 import 'package:asadito/app/data/models/Deuda.dart';
 import 'package:asadito/app/data/models/EstadoDeuda.dart';
-import 'package:asadito/app/data/providers/provider_adamspay.dart';
+import 'package:asadito/app/data/repository/repository_adamspay.dart';
 import 'package:asadito/app/modules/pedido/controllers/pedido_controller.dart';
 import 'package:asadito/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FormularioController extends GetxController {
-  var api = ApiClient();
+  var adamsPayRepository = AdamsPayRepository();
 
   var pedidosController = Get.find<PedidoController>();
 
@@ -64,7 +64,7 @@ class FormularioController extends GetxController {
     try {
       var deuda = _crearDeuda();
       print(deuda.toJson());
-      var respuesta = await api.crearDeuda(deuda);
+      var respuesta = await adamsPayRepository.crearDeuda(deuda);
       if (respuesta.body["meta"]["status"] == "success") {
         var estadoRespueta = EstadoDeuda.fromJson(respuesta.body);
         var linkDePago = estadoRespueta.debt.payUrl;
