@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:asadito/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -20,9 +21,10 @@ class HomeView extends GetView<HomeController> {
             height: 150,
             width: 150,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(50.0),
+              borderRadius: BorderRadius.circular(20.0),
               child: Image.asset(
                 "assets/logo.jpg",
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -42,7 +44,9 @@ class HomeView extends GetView<HomeController> {
             height: Get.mediaQuery.size.height * 0.30,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed(Routes.PEDIDO);
+            },
             child: Text(
               "Realizar Pedido",
               style: TextStyle(fontSize: 20),
