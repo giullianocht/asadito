@@ -6,6 +6,7 @@ abstract class Routes {
   static const PEDIDO = _Paths.PEDIDO;
   static const COMIDA = _Paths.COMIDA;
   static const CARRITO = _Paths.CARRITO;
+  static const FORMULARIO = _Paths.FORMULARIO;
 }
 
 abstract class _Paths {
@@ -13,4 +14,5 @@ abstract class _Paths {
   static const PEDIDO = '/pedido';
   static const COMIDA = '/comida';
   static const CARRITO = '/carrito';
+  static const FORMULARIO = '/formulario';
 }

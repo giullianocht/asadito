@@ -1,4 +1,5 @@
 import 'package:asadito/app/data/models/Pedido.dart';
+import 'package:asadito/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -42,6 +43,21 @@ class CarritoView extends GetView<CarritoController> {
                 ),
         ),
       ),
+      floatingActionButton: ElevatedButton(
+        onPressed: () {
+          Get.toNamed(Routes.FORMULARIO);
+        },
+        child: Text(
+          "Confirmar Pedido ${controller.pedidosController.total} GS.",
+          style: TextStyle(fontSize: 20),
+        ),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(
+            Colors.red,
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
