@@ -2,6 +2,7 @@ import 'package:asadito/app/data/models/Deuda.dart';
 import 'package:asadito/app/data/models/EstadoDeuda.dart';
 import 'package:asadito/app/data/providers/provider_adamspay.dart';
 import 'package:asadito/app/modules/pedido/controllers/pedido_controller.dart';
+import 'package:asadito/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -67,13 +68,8 @@ class FormularioController extends GetxController {
       if (respuesta.body["meta"]["status"] == "success") {
         var estadoRespueta = EstadoDeuda.fromJson(respuesta.body);
         var linkDePago = estadoRespueta.debt.payUrl;
-        print(linkDePago);
-        Get.back();
-        Get.defaultDialog(
-          title: "Exito",
-          content: Text(linkDePago),
-        );
         //Go to PayUrl
+        Get.offAllNamed(Routes.ADAMSPAY, arguments: linkDePago);
       } else {
         Get.back();
         Get.defaultDialog(

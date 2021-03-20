@@ -22,6 +22,7 @@ environment:
 
 dependencies:
   get: ^4.0.0-nullsafety.2
+  webview_flutter: ^2.0.2
   flutter:
     sdk: flutter
 
