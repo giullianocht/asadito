@@ -48,6 +48,25 @@ class PedidoView extends GetView<PedidoController> {
           ],
         ),
       ),
+      floatingActionButton: Obx(
+        () => controller.total.value != 0
+            ? ElevatedButton(
+                onPressed: () {
+                  Get.toNamed(Routes.CARRITO);
+                },
+                child: Text(
+                  "Ir A Pedidos ${controller.total} GS.",
+                  style: TextStyle(fontSize: 20),
+                ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    Colors.red,
+                  ),
+                ),
+              )
+            : Container(),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 

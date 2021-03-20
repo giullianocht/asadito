@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:asadito/app/modules/carrito/bindings/carrito_binding.dart';
+import 'package:asadito/app/modules/carrito/views/carrito_view.dart';
 import 'package:asadito/app/modules/comida/bindings/comida_binding.dart';
 import 'package:asadito/app/modules/comida/views/comida_view.dart';
 import 'package:asadito/app/modules/home/bindings/home_binding.dart';
@@ -27,6 +29,11 @@ class AppPages {
       name: _Paths.COMIDA,
       page: () => ComidaView(),
       binding: ComidaBinding(),
+    ),
+    GetPage(
+      name: _Paths.CARRITO,
+      page: () => CarritoView(),
+      binding: CarritoBinding(),
     ),
   ];
 }

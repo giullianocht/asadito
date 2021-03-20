@@ -2,7 +2,6 @@ import 'package:asadito/app/data/models/Pedido.dart';
 import 'package:get/get.dart';
 
 class PedidoController extends GetxController {
-  //carrito
   var carrito = <PedidoModel>[].obs;
   var total = 0.obs;
   @override
@@ -20,7 +19,7 @@ class PedidoController extends GetxController {
 
   void agregarAlCarrito(PedidoModel pedido) {
     carrito.add(pedido);
-    total.value = total.value = pedido.total;
+    total.value = total.value + pedido.total;
   }
 
   void eliminarDelCarrito(int index) {
