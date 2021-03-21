@@ -12,3 +12,7 @@
 <img src="https://github.com/giullianocht/asadito/blob/main/screenshots/7.jpeg"  width="25%" height="35%" />
 <img src="https://github.com/giullianocht/asadito/blob/main/screenshots/8.jpeg"  width="25%" height="35%" />
 </p>
+
+## Descargar
+
+Esta disponible el apk, [Descargar](https://drive.google.com/file/d/1YbixkgqunJFp5zMDd-EBDJI_N_59TxYq/view?usp=sharing)
