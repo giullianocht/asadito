@@ -15,7 +15,7 @@ class EsperandoController extends GetxController {
       title: "¡Gracias!",
       content: Text("Su pedido se esta preparando, aguarde un momento."),
     );
-    await Future.delayed(Duration(seconds: 7));
+    await Future.delayed(Duration(seconds: 3));
     if (Get.isDialogOpen!) {
       Get.back();
     }
