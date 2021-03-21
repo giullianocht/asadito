@@ -47,9 +47,11 @@ class CarritoView extends GetView<CarritoController> {
         onPressed: () {
           Get.toNamed(Routes.FORMULARIO);
         },
-        child: Text(
-          "Confirmar Pedido ${controller.pedidosController.total} GS.",
-          style: TextStyle(fontSize: 20),
+        child: Obx(
+          () => Text(
+            "Confirmar Pedido ${controller.pedidosController.total} GS.",
+            style: TextStyle(fontSize: 20),
+          ),
         ),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(
