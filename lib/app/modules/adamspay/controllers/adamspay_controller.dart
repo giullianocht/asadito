@@ -25,8 +25,8 @@ class AdamspayController extends GetxController {
         if (element.id == respuesta.debt.docId) {
           if (element.objEstado == "success") {
             if (element.estadoPago == "paid") {
-              print("PAGADO");
-              Get.toNamed(Routes.HOME);
+              Get.reset();
+              Get.offAllNamed(Routes.ESPERANDO);
             } else if (element.estadoPago == "pending") {
               //Pago Pendiente
             } else {

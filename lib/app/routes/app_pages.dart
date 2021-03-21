@@ -6,6 +6,8 @@ import 'package:asadito/app/modules/carrito/bindings/carrito_binding.dart';
 import 'package:asadito/app/modules/carrito/views/carrito_view.dart';
 import 'package:asadito/app/modules/comida/bindings/comida_binding.dart';
 import 'package:asadito/app/modules/comida/views/comida_view.dart';
+import 'package:asadito/app/modules/esperando/bindings/esperando_binding.dart';
+import 'package:asadito/app/modules/esperando/views/esperando_view.dart';
 import 'package:asadito/app/modules/formulario/bindings/formulario_binding.dart';
 import 'package:asadito/app/modules/formulario/views/formulario_view.dart';
 import 'package:asadito/app/modules/home/bindings/home_binding.dart';
@@ -48,6 +50,11 @@ class AppPages {
       name: _Paths.ADAMSPAY,
       page: () => AdamspayView(),
       binding: AdamspayBinding(),
+    ),
+    GetPage(
+      name: _Paths.ESPERANDO,
+      page: () => EsperandoView(),
+      binding: EsperandoBinding(),
     ),
   ];
 }

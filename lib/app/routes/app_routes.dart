@@ -8,6 +8,7 @@ abstract class Routes {
   static const CARRITO = _Paths.CARRITO;
   static const FORMULARIO = _Paths.FORMULARIO;
   static const ADAMSPAY = _Paths.ADAMSPAY;
+  static const ESPERANDO = _Paths.ESPERANDO;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const CARRITO = '/carrito';
   static const FORMULARIO = '/formulario';
   static const ADAMSPAY = '/adamspay';
+  static const ESPERANDO = '/esperando';
 }
