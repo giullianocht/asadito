@@ -1,1 +1,1 @@
-const apikey = "";
+const apikey = "PONER AQUI SU API KEY DE ADAMSPAY";
