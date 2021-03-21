@@ -39,4 +39,4 @@ Guia de integración, [aquí](https://wiki.adamspay.com/devzone:guide)
 
 ## Descargar
 
-Esta disponible el APK, [descargar](https://drive.google.com/file/d/1YbixkgqunJFp5zMDd-EBDJI_N_59TxYq/view?usp=sharing)
+Esta disponible el APK, [descargar](https://github.com/giullianocht/asadito/raw/main/apk-release/asadito.apk)
