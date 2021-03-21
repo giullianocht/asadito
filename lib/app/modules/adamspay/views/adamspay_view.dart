@@ -13,6 +13,10 @@ class AdamspayView extends GetView<AdamspayController> {
         child: WebView(
           initialUrl: controller.respuesta.debt.payUrl,
           javascriptMode: JavascriptMode.unrestricted,
+          onWebResourceError: (_) {
+            print(_.description);
+            controller.goToForm();
+          },
         ),
       ),
     );

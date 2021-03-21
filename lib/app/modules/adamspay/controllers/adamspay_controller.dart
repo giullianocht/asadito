@@ -36,10 +36,12 @@ class AdamspayController extends GetxController {
         //Pago Inactivo
       } else if (element.objEstado == "error") {
         //Pago Error
+
       } else if (element.objEstado == "expired") {
         //Pago Expirado
       } else if (element.objEstado == "canceled") {
         //Pago Cancelado
+
       } else {
         print("ERROR");
       }
@@ -49,4 +51,8 @@ class AdamspayController extends GetxController {
 
   @override
   void onClose() {}
+  void goToForm() {
+    Get.reset();
+    Get.offAllNamed(Routes.HOME);
+  }
 }
