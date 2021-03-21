@@ -63,7 +63,6 @@ class FormularioController extends GetxController {
         barrierDismissible: false);
     try {
       var deuda = _crearDeuda();
-      print(deuda.toJson());
       var respuesta = await adamsPayRepository.crearDeuda(deuda);
       if (respuesta.body["meta"]["status"] == "success") {
         var estadoRespueta = EstadoDeuda.fromJson(respuesta.body);
@@ -72,7 +71,7 @@ class FormularioController extends GetxController {
         Get.back();
         Get.defaultDialog(
           title: "ERROR",
-          content: Text("Ha sucedido un error, por favor intentalo en un rato"),
+          content: Text(respuesta.body["meta"]["description"]),
         );
       }
     } catch (e) {
