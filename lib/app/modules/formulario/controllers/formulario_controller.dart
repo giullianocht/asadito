@@ -67,9 +67,7 @@ class FormularioController extends GetxController {
       var respuesta = await adamsPayRepository.crearDeuda(deuda);
       if (respuesta.body["meta"]["status"] == "success") {
         var estadoRespueta = EstadoDeuda.fromJson(respuesta.body);
-        var linkDePago = estadoRespueta.debt.payUrl;
-        //Go to PayUrl
-        Get.offAllNamed(Routes.ADAMSPAY, arguments: linkDePago);
+        Get.offAllNamed(Routes.ADAMSPAY, arguments: estadoRespueta);
       } else {
         Get.back();
         Get.defaultDialog(

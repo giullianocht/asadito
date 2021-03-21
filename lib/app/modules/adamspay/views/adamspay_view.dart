@@ -11,7 +11,7 @@ class AdamspayView extends GetView<AdamspayController> {
     return Scaffold(
       body: SafeArea(
         child: WebView(
-          initialUrl: controller.linkDePago,
+          initialUrl: controller.respuesta.debt.payUrl,
           javascriptMode: JavascriptMode.unrestricted,
         ),
       ),
