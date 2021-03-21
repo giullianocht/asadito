@@ -7,46 +7,42 @@ import 'package:get/get.dart';
 class AdamspayController extends GetxController {
   EstadoDeuda respuesta = Get.arguments;
   var webHookRepository = WebHookRepository();
-  RxList<NotificacionModel> notificaciones = RxList<NotificacionModel>();
+  var notificacion = NotificacionModel().obs;
 
   @override
   void onInit() {
-    notificaciones.bindStream(webHookRepository.notificacionesStream());
+    notificacion
+        .bindStream(webHookRepository.notificacionStream(respuesta.debt.docId));
     super.onInit();
   }
 
   @override
   void onReady() {
-    ever<List<NotificacionModel>>(notificaciones, (lista) {
-      print("***************");
-      print("ESCUCHANDO");
-      print("***************");
-      lista.forEach((element) {
-        if (element.id == respuesta.debt.docId) {
-          if (element.objEstado == "success") {
-            if (element.estadoPago == "paid") {
-              Get.reset();
-              Get.offAllNamed(Routes.ESPERANDO);
-            } else if (element.estadoPago == "pending") {
-              //Pago Pendiente
-            } else {
-              print("ERROR");
-            }
-          } else if (element.objEstado == "active") {
-            //Pago Activo
-          } else if (element.objEstado == "inactive") {
-            //Pago Inactivo
-          } else if (element.objEstado == "error") {
-            //Pago Error
-          } else if (element.objEstado == "expired") {
-            //Pago Expirado
-          } else if (element.objEstado == "canceled") {
-            //Pago Cancelado
-          } else {
-            print("ERROR");
-          }
+    ever(notificacion, (element) {
+      element = element as NotificacionModel;
+      if (element.objEstado == "success") {
+        if (element.estadoPago == "paid") {
+          webHookRepository.apiClient.deleteAllNotificacion();
+          Get.reset();
+          Get.offAllNamed(Routes.ESPERANDO);
+        } else if (element.estadoPago == "pending") {
+          //Pago Pendiente
+        } else {
+          print("ERROR");
         }
-      });
+      } else if (element.objEstado == "active") {
+        //Pago Activo
+      } else if (element.objEstado == "inactive") {
+        //Pago Inactivo
+      } else if (element.objEstado == "error") {
+        //Pago Error
+      } else if (element.objEstado == "expired") {
+        //Pago Expirado
+      } else if (element.objEstado == "canceled") {
+        //Pago Cancelado
+      } else {
+        print("ERROR");
+      }
     });
     super.onReady();
   }

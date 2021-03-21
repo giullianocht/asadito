@@ -126,14 +126,16 @@ class PedidoView extends GetView<PedidoController> {
                       ),
                     ],
                   ),
-                  Container(
-                    height: 150,
-                    width: 180,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(17.0),
-                      child: Image.asset(
-                        comida.asset,
-                        fit: BoxFit.cover,
+                  Center(
+                    child: Container(
+                      height: 150,
+                      width: 180,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(17.0),
+                        child: Image.asset(
+                          comida.asset,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   )

@@ -4,7 +4,11 @@ import 'package:asadito/app/data/providers/provider_webhook.dart';
 class WebHookRepository {
   var apiClient = WebHookiClient();
 
-  Stream<List<NotificacionModel>> notificacionesStream() {
-    return apiClient.notificacionesStream();
+  Stream<NotificacionModel> notificacionStream(String docId) {
+    return apiClient.notificacionStream(docId);
+  }
+
+  Future<void> deleteAllNotificacion() async {
+    return apiClient.deleteAllNotificacion();
   }
 }

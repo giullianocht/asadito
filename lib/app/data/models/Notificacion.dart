@@ -4,8 +4,11 @@ class NotificacionModel {
   late String id;
   late String estadoPago;
   late String objEstado;
-  NotificacionModel(
-      {required this.id, required this.estadoPago, required this.objEstado});
+  NotificacionModel() {
+    id = "";
+    estadoPago = "";
+    objEstado = "";
+  }
   NotificacionModel.fromDocumentSnapshot(
     DocumentSnapshot documentSnapshot,
   ) {
