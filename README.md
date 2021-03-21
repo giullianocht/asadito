@@ -1,5 +1,23 @@
 # Asadito
 
+## Configuración Inicial
+
+- No olvide cargar su apikey de AdamsPay en "asadito/lib/app/secret/key.dart"
+
+- No olvide configurar el WebHook en la configuración de AdamsPay
+
+WebHook: "https://us-central1-asadito.cloudfunctions.net/webhooks"
+
+<p float="left">
+<img src="https://github.com/giullianocht/asadito/blob/main/screenshots/webhook.jpeg"  width="25%" height="35%" />
+</p>
+
+## AdamsPay
+
+Crear una cuenta, [aquí](https://admin.adamspay.com/merchants/users/login)
+
+Guia de integración, [aquí](https://wiki.adamspay.com/devzone:guide)
+
 ## Screenshoots
 
 <p float="left">
