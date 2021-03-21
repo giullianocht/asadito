@@ -4,6 +4,12 @@
 
 - No olvide cargar su apikey de AdamsPay en "asadito/lib/app/secret/key.dart"
 
+- No olvide configurar el Identificador (Slug) de AdamsPay como "asadito"
+
+<p float="left">
+<img src="https://github.com/giullianocht/asadito/blob/main/screenshots/slug.jpeg"  width="25%" height="35%" />
+</p>
+
 - No olvide configurar el WebHook en la configuración de AdamsPay
 
 WebHook: "https://us-central1-asadito.cloudfunctions.net/webhooks"
