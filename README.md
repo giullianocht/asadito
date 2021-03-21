@@ -15,4 +15,4 @@
 
 ## Descargar
 
-Esta disponible el apk, [Descargar](https://drive.google.com/file/d/1YbixkgqunJFp5zMDd-EBDJI_N_59TxYq/view?usp=sharing)
+Esta disponible el APK, [descargar](https://drive.google.com/file/d/1YbixkgqunJFp5zMDd-EBDJI_N_59TxYq/view?usp=sharing)
